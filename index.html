@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In-App Subscription</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <a href="#" class="close-btn">&times;</a>
+  <div class="container">
+    <h1>Get 20+ amazing apps with ONE subscription</h1>
+
+    <ul>
+      <li>Unlimited access to 20+ educational apps</li>
+      <li>Loved by millions of kids and parents</li>
+      <li>100% safe — we don’t share your data</li>
+      <li>Fun tasks that develop creative thinking</li>
+      <li>Play offline anytime</li>
+    </ul>
+
+    <div class="plan" onclick="selectPlan('monthly')" id="monthly">
+      <div class="price">$9.99/month</div>
+      <div>Monthly Plan</div>
+    </div>
+
+    <div class="plan" onclick="selectPlan('annual')" id="annual">
+      <div class="price">$29.99/year</div>
+      <div class="highlight-text">-50% — $29.99 instead of $59.99</div>
+      <div>Renews for $59.99 per year</div>
+    </div>
+
+    <button class="btn" onclick="confirmPurchase()">Get unlimited access</button>
+
+    <div class="legal">
+      <p>Cancel anytime</p>
+      <p>Your subscription renews automatically unless you cancel it at least 24 hours before the current subscription period ends.</p>
+      <a href="#">Terms of Use</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+
+  <div class="modal" id="purchaseModal">
+    <div class="modal-content">
+      <p>Thank you! Your purchase for the <span id="selectedPlanName"></span> plan has been initiated.</p>
+      <button onclick="closeModal()">OK</button>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+  </body>
+</html>
