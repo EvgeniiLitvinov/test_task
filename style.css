@@ -170,3 +170,34 @@ body {
 .popup .box button:hover {
   background: #176b56;
 }
+
+.features {
+  margin: 16px 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #1a5276;
+  text-align: center;
+  justify-content: center; /* Центрирует элементы по вертикали */
+  height: 100%; /* Заполняет весь доступный вертикальный простор */
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  max-width: 340px; /* Ограничивает ширину каждого элемента */
+  width: 100%; /* Заставляет элементы занимать доступную ширину */
+  justify-content: flex-start; /* Размещает текст и иконку слева */
+}
+
+.check {
+  color: #1f8a70;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
