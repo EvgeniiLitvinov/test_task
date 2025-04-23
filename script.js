@@ -1,23 +1,24 @@
-let selectedPlan = null;
+function showPopup() {
+  document.getElementById('popup').classList.add('active');
+}
+function hidePopup() {
+  document.getElementById('popup').classList.remove('active');
+}
+function selectPlan(el) {
+  document.querySelectorAll('.plan').forEach(plan => plan.classList.remove('selected'));
+  el.classList.add('selected');
+}
 
-    function selectPlan(planId) {
-      document.querySelectorAll('.plan').forEach(plan => plan.classList.remove('selected'));
-      const selectedElement = document.getElementById(planId);
-      selectedElement.classList.add('selected');
-      selectedPlan = planId;
-    }
+document.addEventListener('click', (e) => {
+  const plans = document.querySelectorAll('.plan');
+  const isClickInside = [...plans].some(plan => plan.contains(e.target));
+  if (!isClickInside) {
+    plans.forEach(plan => plan.classList.remove('selected'));
+  }
+});
 
-    function confirmPurchase() {
-      if (!selectedPlan) {
-        alert('Please select a subscription plan.');
-        return;
-      }
-
-      const planName = selectedPlan === 'monthly' ? 'Monthly' : 'Annual';
-      document.getElementById('selectedPlanName').innerText = planName;
-      document.getElementById('purchaseModal').classList.add('show');
-    }
-
-    function closeModal() {
-      document.getElementById('purchaseModal').classList.remove('show');
-    }
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.plan').forEach(plan => plan.classList.remove('selected'));
+  }
+});
