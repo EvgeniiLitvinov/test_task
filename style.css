@@ -1,34 +1,42 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: radial-gradient(circle at top center, #e6faff, #ffffff);
   color: #222;
 }
+
 .container {
   max-width: 390px;
-  margin: auto;
-  padding: 48px 20px 24px;
+  margin: 0 auto;
+  padding: 32px 16px 24px;
   position: relative;
 }
+
 .close-btn {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 16px;
+  right: 16px;
   font-size: 20px;
   cursor: pointer;
   color: #888;
   transition: transform 0.2s;
   z-index: 1;
 }
+
 .close-btn:hover {
   transform: scale(1.2);
   color: #444;
 }
+
 .hero-image {
   width: 100%;
-  margin-bottom: 10px;
-  background-color: transparent;
+  margin-bottom: 20px;
 }
+
 .title {
   text-align: center;
   font-size: 24px;
@@ -36,14 +44,35 @@ body {
   margin-bottom: 16px;
   color: #1e3a5f;
 }
-.description {
+
+.features {
+  margin: 16px 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
   font-family: 'Poppins', sans-serif;
-  font-size: 15px;
-  text-align: center;
-  margin-bottom: 24px;
-  line-height: 1.6;
+  font-size: 14px;
   color: #1a5276;
+  text-align: center;
 }
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  justify-content: center;
+  text-align: left;
+}
+
+.check {
+  color: #1f8a70;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
 .plan {
   border: 2px solid #cce5ff;
   border-radius: 16px;
@@ -58,19 +87,23 @@ body {
   cursor: pointer;
   transform: scale(1);
 }
+
 .plan:hover {
   background-color: #f4fbff;
 }
+
 .plan.selected {
   border-color: #1f8a70;
   box-shadow: 0 0 0 3px rgba(31,138,112,0.2);
   transform: scale(1.02);
   background: linear-gradient(145deg, #d2fbe9, #b1efd3);
 }
+
 .plan .left {
   font-size: 16px;
   font-weight: bold;
 }
+
 .plan .right {
   font-size: 13px;
   background: #ffb347;
@@ -79,16 +112,19 @@ body {
   border-radius: 20px;
   font-weight: 600;
 }
+
 .plan .small-text {
   font-size: 12px;
   color: #555;
   margin-top: 4px;
 }
+
 .strike {
   text-decoration: line-through;
   color: #888;
   margin-left: 4px;
 }
+
 .cta-button {
   background: linear-gradient(to right, #1f8a70, #34be82);
   color: white;
@@ -103,9 +139,11 @@ body {
   box-shadow: 0 6px 14px rgba(31, 138, 112, 0.3);
   transition: background 0.3s ease;
 }
+
 .cta-button:hover {
   background: linear-gradient(to right, #1a6a58, #28a16a);
 }
+
 .legal {
   font-size: 12px;
   color: #666;
@@ -113,6 +151,7 @@ body {
   text-align: center;
   line-height: 1.5;
 }
+
 .links {
   display: flex;
   justify-content: center;
@@ -120,10 +159,12 @@ body {
   margin-top: 10px;
   font-size: 12px;
 }
+
 .links a {
   color: #0077cc;
   text-decoration: underline;
 }
+
 .popup {
   position: fixed;
   top: 0; left: 0;
@@ -137,10 +178,12 @@ body {
   opacity: 0;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
+
 .popup.active {
   visibility: visible;
   opacity: 1;
 }
+
 .popup .box {
   background: white;
   padding: 24px;
@@ -151,13 +194,16 @@ body {
   transform: scale(0.95);
   animation: popIn 0.3s forwards;
 }
+
 @keyframes popIn {
   to { transform: scale(1); }
 }
+
 .popup .box p {
   font-size: 16px;
   margin-bottom: 16px;
 }
+
 .popup .box button {
   background: #1f8a70;
   color: white;
@@ -167,37 +213,7 @@ body {
   border-radius: 12px;
   cursor: pointer;
 }
+
 .popup .box button:hover {
   background: #176b56;
 }
-
-.features {
-  margin: 16px 0 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  color: #1a5276;
-  text-align: center;
-  justify-content: center; /* Центрирует элементы по вертикали */
-  height: 100%; /* Заполняет весь доступный вертикальный простор */
-}
-
-.feature-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  max-width: 340px; /* Ограничивает ширину каждого элемента */
-  width: 100%; /* Заставляет элементы занимать доступную ширину */
-  justify-content: flex-start; /* Размещает текст и иконку слева */
-}
-
-.check {
-  color: #1f8a70;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 1.4;
-}
-
